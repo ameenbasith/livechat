@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-<form method="post">
+<form method="post" class="buttons">
     <h3>Enter the Room</h3>
     <div>
         <label>Name:</label>
@@ -14,6 +14,13 @@
         </label>
         <button type="submit" name="join">Join Room</button>
     </div>
-    <button type="submit" name="create">Create Room</button>
+    <button type="submit" name="create" class="create-btn">Create Room</button>
+    {% if error %}
+    <ul>
+        <li>
+            {{error}}
+        </li>
+    </ul>
+    {% endif %}
 </form>
 {% endblock %}
